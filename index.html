@@ -11,10 +11,10 @@
     <div>
         <h1>Word Guess Game!</h1>
         <h3 id="directions-text">Press any key to get started!</h3>
-        <h3 id="wins-text">Wins</h3>
-        <h3 id="current-word-text">Current Word</h3>
-        <h3 id="guesses-text">Number of Guesses Remaining</h3>
-        <h3 id="letters-used">Letters already guessed</h3>
+        <h3 id="wins-text">Wins: </h3>
+        <h3 id="current-word-text">Current Word:  </h3>
+        <h3 id="guesses-text">Number of Guesses Remaining: </h3>
+        <h3 id="letters-used">Letters already guessed: </h3>
     </div>
     
     <script type="text/javascript">
@@ -25,7 +25,22 @@
             "Octopus",
             "Squid",
             "Scallops",
-            "Crab"
+            "Crab",
+            "Cthulhu",
+            "Salmon",
+            "Shark",
+            "Tilapia",
+            "Tuna",
+            "Lobster",
+            "Catfish",
+            "Anchovy",
+            "Herring",
+            "Flounder",
+            "Caviar",
+            "Clam",
+            "Sturgeon",
+            "Oyster",
+            "Mussel"
         ];
         
     // Creating variables to store wins, guesses remaining, and letters used. 
@@ -44,20 +59,29 @@
         document.onkeyup = function(event) {
             // Determines which key was pressed.
             var letterGuessed = event.key;
-
             // Randomly chooses a word from the options array.
             var wordChosen = wordOptionsList[Math.floor(Math.random() * wordOptionsList.length)];
-            
+            console.log(wordChosen);
+            var text = wordChosen.split('');
+            console.log(text);
+            for (var i = 0; i < wordChosen.length; i++) {
+                if (letterGuessed === wordChosen[i]) {
+                    console.log("the loop works");
+                }
+            }
+
             //* if letterGuessed is part of wordChosen (use IndexOf), 
             //* display letterGuessed in wordChosen
             //* else display letterGuessed in lettersUsedText
             //* Guesses remaining --
 
-            //Also, figure out:
-            //* how to display _ _ _  instead of letters
-
+            //Display a new word
+            for (var i = 0; i < wordChosen.length; i++) {
+                var text  = document.createTextNode("_ ");
+                currentWordText.appendChild(text);
         }
-    
+    }
+
         
     </script>
 </body>
