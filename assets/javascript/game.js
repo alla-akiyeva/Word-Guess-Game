@@ -52,6 +52,8 @@ for (var j = 0; j < wordChosen.length; j++) {
     if (letterGuessed === wordChosen[j]) {
         blankArray[j] = letterGuessed;
         wordChosenText.textContent = blankArray.join(" ");
+        guessesRemaining--;
+        guessesText.textContent = "Number of Guesses Remaining: " + guessesRemaining;
     }
 }   
     if (blankArray[j] !== letterGuessed && blankArray.includes(letterGuessed)===false) {
