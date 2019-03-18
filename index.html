@@ -2,87 +2,29 @@
 <html lang=en>
 <head>  
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Word Guess Game</title>
-
 </head>
 
 <body>
-
-    <div>
-        <h1>Word Guess Game!</h1>
-        <h3 id="directions-text">Press any key to get started!</h3>
-        <h3 id="wins-text">Wins: </h3>
-        <h3 id="current-word-text">Current Word:  </h3>
-        <h3 id="guesses-text">Number of Guesses Remaining: </h3>
-        <h3 id="letters-used">Letters already guessed: </h3>
-    </div>
+<div class="jumbotron">
+    <h1 class="display-4">Sea World</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h1>Word Guess Game!</h1>
+                    <h3 id="wins-text">Wins: </h3>
+                    <h3 id="current-word-text">Current Word:  </h3>
+                    <h3 id="word-place-holder"> </h3>
+                    <h3 id="guesses-text">Number of Guesses Remaining: 10</h3>
+                    <h3 id="wrong-guesses">Letters guessed wrong: </h3>
+                </div>
+                <div class="col-lg-8">
+                </div>
+            </div>
+        </div>
+</div>
+    <script src="assets/javascript/game.js"></script>
     
-    <script type="text/javascript">
-    // Creating an array with word options
-        var wordOptionsList = [
-            "Cuttlefish",
-            "Shrimp",
-            "Octopus",
-            "Squid",
-            "Scallops",
-            "Crab",
-            "Cthulhu",
-            "Salmon",
-            "Shark",
-            "Tilapia",
-            "Tuna",
-            "Lobster",
-            "Catfish",
-            "Anchovy",
-            "Herring",
-            "Flounder",
-            "Caviar",
-            "Clam",
-            "Sturgeon",
-            "Oyster",
-            "Mussel"
-        ];
-        
-    // Creating variables to store wins, guesses remaining, and letters used. 
-        var wins = 0;
-        var guessesRemaining = 10;
-        var lettersUsed = 0;
-
-    // Creating variables that hold references to the places in the HTML where we want to display things.
-        var directionsText = document.getElementById("directions-text");
-        var winsText = document.getElementById("wins-text");
-        var currentWordText = document.getElementById("current-word-text");
-        var guessesText = document.getElementById("guesses-text");
-        var lettersUsedText = document.getElementById("letters-used");
-
-    // This function is run whenever the user presses a key.
-        document.onkeyup = function(event) {
-            // Determines which key was pressed.
-            var letterGuessed = event.key;
-            // Randomly chooses a word from the options array.
-            var wordChosen = wordOptionsList[Math.floor(Math.random() * wordOptionsList.length)];
-            console.log(wordChosen);
-            var text = wordChosen.split('');
-            console.log(text);
-            for (var i = 0; i < wordChosen.length; i++) {
-                if (letterGuessed === wordChosen[i]) {
-                    console.log("the loop works");
-                }
-            }
-
-            //* if letterGuessed is part of wordChosen (use IndexOf), 
-            //* display letterGuessed in wordChosen
-            //* else display letterGuessed in lettersUsedText
-            //* Guesses remaining --
-
-            //Display a new word
-            for (var i = 0; i < wordChosen.length; i++) {
-                var text  = document.createTextNode("_ ");
-                currentWordText.appendChild(text);
-        }
-    }
-
-        
-    </script>
 </body>
 </html>
