@@ -53,7 +53,7 @@ for (var j = 0; j < wordChosen.length; j++) {
         blankArray[j] = letterGuessed;
         wordChosenText.textContent = blankArray.join(" ");
         guessesRemaining--;
-        guessesText.textContent = "Number of Guesses Remaining: " + guessesRemaining;
+        guessesText.textContent = "Remaining guesses: " + guessesRemaining;
     }
 }   
     if (blankArray[j] !== letterGuessed && blankArray.includes(letterGuessed)===false) {
@@ -61,10 +61,11 @@ for (var j = 0; j < wordChosen.length; j++) {
         guessesRemaining--;
 
         wrongGuessesText.textContent = "Letters guessed wrong: " + wrongGuesses.join(" ");
-        guessesText.textContent = "Number of Guesses Remaining: " + guessesRemaining;
+        guessesText.textContent = "Remaining guesses: " + guessesRemaining;
        }
        if (guessesRemaining === 0) {
                alert("You lost!");
+               location.reload()
        }
        if (blankArray.includes("_")===false) {
                alert("You won!!! The word is " + wordChosen);
