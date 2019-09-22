@@ -7,4 +7,8 @@ Hangman, or a word guess game, built with JavaScript. As as you open the page, t
 #### Technologies used
 HTML, CSS, JavaScript, Bootstrap
 
+__________________________________________
+
+![Main Page](/assets/images/HangmanScreen.png)
+
 
