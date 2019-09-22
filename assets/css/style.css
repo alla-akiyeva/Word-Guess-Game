@@ -8,13 +8,9 @@
     line-height: 34px;
     background-image: url("../images/sea-star.jpg");
     background-attachment: fixed;
-    /* background-size: 100% 100%; */
     background-size: cover;
   }
   .jumbotron {
-    /* background-image: url("../images/sea-star.jpg");
-    background-attachment: fixed;
-    background-size: 100% 100%; */
     background-color: transparent;
     text-align: center;
     color: black;
